@@ -1,0 +1,203 @@
+/* ======= LAYOUT GERAL ======= */
+.catalog-wrapper {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    background: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  }
+  
+  .catalog-wrapper h2 {
+    margin: 0 0 20px;
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  /* ======= ÁREA DO LIVRO ======= */
+  .catalog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1600px; /* importante pro efeito 3D */
+  }
+  
+  .catalog-book {
+    position: relative;
+    width: min(90vw, 700px);
+    height: min(60vw, 460px);
+    background: #f7f7f7;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.18);
+  }
+  
+  /* ======= PÁGINAS ======= */
+  .catalog-page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transform-origin: left center;
+    transform: rotateY(0deg);
+    transition: transform 0.8s ease, box-shadow 0.8s ease;
+    backface-visibility: hidden;
+    background: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  /* Página virada */
+  .catalog-page.turned {
+    transform: rotateY(-180deg);
+    box-shadow: none;
+  }
+  
+  /* Estilo da imagem dentro da página */
+  .catalog-page img {
+    max-width: 96%;
+    max-height: 96%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+  }
+  
+  /* ======= CONTROLES ======= */
+  .catalog-controls {
+    margin-top: 16px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  
+  .catalog-controls button {
+    padding: 8px 16px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+    background: #111827;
+    color: #f9fafb;
+    box-shadow: 0 4px 10px rgba(15, 23, 42, 0.25);
+    transition: transform 0.1s ease, box-shadow 0.1s ease, opacity 0.2s ease;
+  }
+  
+  .catalog-controls button:disabled {
+    opacity: 0.35;
+    cursor: not-allowed;
+    box-shadow: none;
+  }
+  
+  .catalog-controls button:not(:disabled):hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(15, 23, 42, 0.35);
+  }
+  
+  .catalog-controls button:not(:disabled):active {
+    transform: translateY(1px);
+    box-shadow: 0 3px 8px rgba(15, 23, 42, 0.25);
+  }
+  
+  #pageIndicator {
+    font-size: 0.95rem;
+    color: #4b5563;
+  }
+  
+  /* Responsivo em telas menores */
+  @media (max-width: 600px) {
+    .catalog-wrapper {
+      margin: 20px 10px;
+      padding: 16px;
+    }
+  
+    .catalog-wrapper h2 {
+      font-size: 1.25rem;
+    }
+  
+    .catalog-controls button {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+/* Centralização do wrapper */
+.wrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+.link_wrapper {
+  position: relative;
+}
+
+/* Agora o botão recebe o estilo do seu <a> */
+.accordion-btn {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #333;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #333;
+  transition: all .35s;
+  cursor: pointer;
+  border-radius: 0; /* Para ficar igual ao seu estilo original */
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all .35s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #2ecc71;
+  transition: all .35s;
+}
+
+/* Efeitos de hover */
+.accordion-btn:hover {
+  width: 200px;
+  border: 3px solid #2ecc71;
+  background: transparent;
+  color: #2ecc71;
+}
+
+.accordion-btn:hover + .icon {
+  border: 3px solid #2ecc71;
+  right: -25%;
+}
+
+/* Conteúdo do acordeão */
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  background: #f5f5f5;
+  border-radius: 10px;
+  margin-top: 10px;
+  padding: 0 15px;
+}

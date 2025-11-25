@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Casa da Calha</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="btn.css" />
+  <link rel="stylesheet" href="catalogo/style.css">
+  <link rel="stylesheet" href="modal.css">
+</head>
+
+<body class="reveal">
+
+  <!-- ======= CABEÇALHO ======= -->
+  <header class="Htop" id="topo">
+    <div class="container">
+
+      <nav class="Mtop">
+        <h2 class="logo">
+          <a href="#topo"><img src="Casa.png" alt="CasaDaCalhas"></a>
+        </h2>
+
+        <ul class="Menu">
+          <li><a href="#topo">Home</a></li>
+          <li><a href="#sobre">Sobre nós</a></li>
+          <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#Contato">Contato</a></li>
+        </ul>
+      </nav>
+
+      <div class="intro">
+        <h1 style="color:black; text-shadow:1px 1px 5px rgba(238,238,114,0.829); color:white; font-size:4rem;">
+          Especialistas em Calhas e Rufos
+        </h1>
+
+        <p>
+          Instalação, manutenção e soluções sob medida. <br>
+          <strong style="color: yellow;">Solicite seu orçamento sem compromisso!</strong>
+        </p>
+
+        <a href="#Contato" class="glow-on-hover btn-intro">Fale Conosco</a>
+        <img class="img-2" src="Casa2.png" alt="CasaDaCalhas">
+      </div>
+
+      <div class="f-itop">
+        <a target="_blank" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a>
+        <a target="_blank" href="https://www.instagram.com/"><i class="fa fa-instagram"></i></a>
+        <a target="_blank" href="https://wa.me/5565999532679"><i class="fa fa-whatsapp"></i></a>
+      </div>
+      <!--Whats in Highlight-->
+      <div class="whts">
+        <a target="_blank" href="https://wa.me/5565999532679">
+          <i class="fa fa-whatsapp"></i>
+        </a>
+      </div>
+    </div>
+  </header>
+
+
+  <!-- ======= MISSION VISION VALUES  ======= -->
+  <section class="boxalign reveal">
+    <div class="container">
+
+      <div class="box-1">
+        <div class="btnn btnn-one" id="btnMissao">
+          <span>MISSÃO</span>
+        </div>
+      </div>
+
+      <div class="box-2">
+        <div class="btnn btnn-two" id="btnVisao">
+          <span>VISÃO</span>
+        </div>
+      </div>
+
+      <div class="box-3">
+        <div class="btnn btnn-three" id="btnValores">
+          <span>VALORES</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======= MODAIS ======= -->
+  <div class="modal" id="myModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><strong>Missão Casa da Calha</strong><br>
+        <img src="Casa02.png" alt="Missão Casa da Calha" class="modal-img"></p>
+    </div>
+  </div>
+
+  <div class="modal" id="mayModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><strong>Visão Casa da Calha</strong><img src="Casa01.png" alt="Visão Casa da Calha" class="modal-img"><br>
+      </p>
+    </div>
+  </div>
+
+  <div class="modal" id="meyModal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p><strong>Valores Casa da Calha</strong> <br>
+        <img src="Casa03.png" alt="Valores Casa da Calha" class="modal-img">
+      </p>
+    </div>
+  </div>
+
+  <!-- ======= CATÁLOGO ======= -->
+  <div class="accordion">
+
+    <div class="wrapper">
+      <div class="link_wrapper">
+        <button class="accordion-btn">Catálogo de Fotos</button>
+
+        <div class="icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M12 2L3 21h18L12 2z" />
+          </svg>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-content" id="catalogContent">
+      <div class="catalog-wrapper" style="padding:20px;">
+        <h2>Catálogo de Fotos</h2>
+
+        <div class="catalog">
+          <div class="catalog-book" id="catalogBook">
+            <p style="padding:20px;">(Seu catálogo vai aparecer aqui)</p>
+          </div>
+        </div>
+
+        <div class="catalog-controls">
+          <button id="prevPage">← Página anterior</button>
+          <span id="pageIndicator">Página 1 de 1</span>
+          <button id="nextPage">Página seguinte →</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- ======= HERO SLIDER ======= -->
+  <section id="hero" class="hero-slider" aria-label="Destaques">
+    <div class="slides">
+
+      <article class="slide is-active" style="--bg:url('./imagens/hero1.jpg')">
+        <div class="overlay"></div>
+        <div class="content">
+          <h1>instalação e confecção</h1>
+          <p>Instalação de Calhas, Rufos e Condutores sob medida para sua obra.</p>
+          <a href="#contato" class="btn btn-hero">orçamento sem compromisso</a>
+        </div>
+      </article>
+
+      <article class="slide" style="--bg:url('./imagens/hero2.jpg')">
+        <div class="overlay"></div>
+        <div class="content">
+          <h1>projeto sob medida</h1>
+          <p>Fabricamos peças personalizadas para atender os clientes mais exigentes.</p>
+          <a href="#catalogContent" class="btn btn-hero">ver catálogo</a>
+        </div>
+      </article>
+
+      <article class="slide" style="--bg:url('catalogo/img.jpg')">
+        <div class="overlay"></div>
+        <div class="content">
+          <h1>manutenção e limpeza</h1>
+          <p>Evite infiltrações e entupimentos com manutenção periódica.</p>
+          <a href="#servicos" class="btn btn-hero">nossos serviços</a>
+        </div>
+      </article>
+
+    </div>
+
+    <button class="nav prev">❮</button>
+    <button class="nav next">❯</button>
+    <div class="dots"></div>
+  </section>
+
+
+  <!-- ======= SERVIÇOS ======= -->
+  <section id="servicos" class="servicos">
+    <div class="container">
+      <h2>Nossos Serviços</h2>
+
+      <div class="cards">
+
+        <div class="card">
+          <i class="fa fa-wrench"></i>
+          <h3>Instalação de Calhas</h3>
+          <p>Projetos personalizados com alta durabilidade e acabamento impecável.</p>
+        </div>
+
+        <div class="card">
+          <i class="fa fa-refresh"></i>
+          <h3>Manutenção e Limpeza</h3>
+          <p>Evite entupimentos e infiltrações mantendo suas calhas sempre limpas.</p>
+        </div>
+
+        <div class="card">
+          <i class="fa fa-home"></i>
+          <h3>Fabricação de Rufos</h3>
+          <p>Rufos sob medida em diversos materiais, garantindo proteção e estética.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======= FORMULÁRIO ======= -->
+  <section class="contatos" id="Contato">
+    <div class="container02">
+
+      <h1>Entre em Contato</h1>
+
+      <form id="contactForm">
+        <div class="input-group">
+          <label for="name">Nome</label>
+          <input type="text" id="name" required>
+        </div>
+
+        <div class="input-group">
+          <label for="email">E-mail</label>
+          <input type="email" id="email" required>
+        </div>
+
+        <div class="input-group">
+          <label for="message">Mensagem</label>
+          <textarea id="message" rows="5" required></textarea>
+        </div>
+
+        <button class="buttonB" type="submit">Enviar</button>
+      </form>
+
+      <p id="successMessage" class="success-message"></p>
+    </div>
+  </section>
+  <!-- ======= MAPA ======= -->
+  <section class="contat">
+    <div class="container01">
+      <h2><strong>Cidades que atendemos</strong></h2>
+      <h2><strong>Entre em Contato</strong></h2>
+      <p>Solicite um orçamento agora mesmo!</p>
+      <a href="https://wa.me/5565999532679" class="btn"><i class="fa fa-whatsapp"></i> WhatsApp</a>
+      <a href="tel:+5565999532679" class="btn"><i class="fa fa-phone"></i> Ligar Agora</a>
+    </div>
+  </section>
+    <iframe 
+      src="https://www.google.com/maps/d/u/0/embed?mid=11T2LZVkpkP4qU_6k5snVMds5GAwma6Q&ll=-15.58749271009519%2C-56.10107770753207&z=14"
+      width="100%" height="480" frameborder="0" allowfullscreen>
+    </iframe>
+  <!-- ======= RODAPÉ ======= -->
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Casa da Calha — Todos os direitos reservados.</p>
+      <small>Desenvolvido por Olivam Josias</small>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+  <script src="catalogo/catalogo.js"></script>
+  <script src="modal.js"></script>
+</body>
+</html>

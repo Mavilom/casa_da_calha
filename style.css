@@ -1,0 +1,968 @@
+/* =========================================================
+   RESET & BASE
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  /* Container padrão */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+  
+  :root {
+    --bg-body: #f5f7fb;
+    --azul: #004aad;
+    --azul-esc: #002b80;
+    --cinza-esc: #15171e;
+    --cinza-claro: #e6e9f0;
+    --amarelo: #ffc600;
+    --amarelo-esc: #e0ac00;
+    --verde: #27ae60;
+    --texto: #333;
+    --radius-lg: 18px;
+    --transition: 0.3s ease;
+    --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.25);
+    --max-width: 1120px;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background: var(--bg-body);
+    color: var(--texto);
+    line-height: 1.5;
+  }
+  
+  img {
+    max-width: 100%;
+    display: block;
+  }
+  
+  /* Container padrão */
+  .container,
+  .container01,
+  .container02 {
+    width: min(90%, var(--max-width));
+    margin: 0 auto;
+  }
+  
+  /* =========================================================
+     CABEÇALHO / TOPO
+  ========================================================= */
+  .Htop {
+    background: linear-gradient(120deg, #12151c 0%, #2c303a 50%, #6b727c 100%);
+    color: #fff;
+    padding: 18px 0 40px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* barra gradiente "metálica" do topo (efeito tecnológico) */
+  .Htop::after {
+    content: "";
+    position: absolute;
+    inset-inline: 0;
+    bottom: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--amarelo), #ffffff, var(--azul));
+    opacity: 0.7;
+  }
+  
+  /* NAVBAR */
+  .Mtop {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+  }
+  
+  /* logo */
+  .logo img {
+    max-width: 150px;
+  }
+  
+  /* menu */
+  .Menu {
+    list-style: none;
+    display: flex;
+    gap: 28px;
+    align-items: center;
+  }
+  
+  .Menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.98rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color var(--transition);
+  }
+  
+  /* linha embaixo do link */
+  .Menu li a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--amarelo);
+    transition: width var(--transition);
+  }
+  
+  .Menu li a:hover {
+    color: var(--amarelo);
+  }
+  
+  .Menu li a:hover::after {
+    width: 100%;
+  }
+  
+  /* Ícones redes sociais no topo */
+  .f-itop {
+    position: absolute;
+    right: 5%;
+    top: 20px;
+    display: flex;
+    gap: 12px;
+  }
+  
+  .f-itop a {
+    color: #fff;
+    font-size: 1.2rem;
+    transition: transform var(--transition), color var(--transition);
+  }
+  
+  .f-itop a:hover {
+    color: var(--amarelo);
+    transform: translateY(-2px) scale(1.05);
+  }
+  
+  /* INTRO TEXTO */
+  .intro {
+    text-align: left;
+    padding: 40px 20px;
+    max-width: 600px;
+    margin: 0;
+    
+  }
+  .img-2{
+    position: absolute;
+    left: 55rem;
+    top: 13rem;
+    right: 0px;
+    width: 480px; /* ajuste como quiser */
+    animation: pulse 20s ease-in-out infinite;
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(0.5); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(0.5); }
+  }
+  
+  .intro h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+  
+  .intro p {
+    font-size: 20px;
+    line-height: 1.4;
+    margin-bottom: 40px;
+  }
+  
+  .btn-intro {
+    display: flex;
+    margin-top: 20px;
+  }
+  @media (max-width: 768px) {
+    nav {
+      display: none; /* esconde o menu grande */
+    }
+  
+    .intro {
+      padding: 20px;
+      margin: 0;
+      text-align: center;
+    }
+  
+    .intro h1 {
+      font-size: 26px;
+    }
+  
+    .intro p {
+      font-size: 16px;
+    }
+  
+    header img {
+      max-width: 150px; /* ajusta o logo no celular */
+      margin: 0 auto;
+      display: block;
+    }
+  }
+  
+  
+  
+  /* botão principal */
+  .glow-on-hover {
+    margin-top: 24px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: linear-gradient(135deg, var(--amarelo), var(--amarelo-esc));
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 999px;
+    padding: 0.8rem 2.4rem;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.5rem;
+    text-transform: uppercase;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  }
+  
+  .sobre .paragrafo {
+    max-width: 700px;
+    margin: auto;
+    line-height: 1.6;
+    background-color: #c4f3d5;
+    border-radius: 1px 15px 1px 15px;
+    padding: 5rem;
+    font-size: 25px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
+      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
+      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
+      rgba(0, 0, 0, 0.06) 0px 2px 1px,
+      rgba(0, 0, 0, 0.09) 0px 4px 2px,
+      rgba(0, 0, 0, 0.09) 0px 8px 4px,
+      rgba(0, 0, 0, 0.09) 0px 16px 8px,
+      rgba(0, 0, 0, 0.09) 0px 32px 16px;
+  }
+  
+  /* Parágrafo mais leve no mobile */
+  @media (max-width: 768px) {
+    .sobre .paragrafo {
+      padding: 2rem;
+      font-size: 18px;
+    }
+  }
+  
+  /* borda neon */
+  .glow-on-hover::before {
+    content: "";
+    position: absolute;
+    inset: -2px;
+    border-radius: inherit;
+    background: linear-gradient(
+      45deg,
+      #ff0000,
+      #ff7300,
+      #fffb00,
+      #48ff00,
+      #00ffd5,
+      #002bff,
+      #7a00ff,
+      #ff00c8,
+      #ff0000
+    );
+    background-size: 400%;
+    filter: blur(6px);
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 14s linear infinite;
+  }
+  
+  .glow-on-hover::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: #111;
+    z-index: -1;
+  }
+  
+  .glow-on-hover:hover::before {
+    opacity: 1;
+  }
+  
+  .glow-on-hover:hover {
+    transform: translateY(-1px);
+  }
+  
+  /* animação neon */
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+    50% {
+      background-position: 400% 0;
+    }
+    100% {
+      background-position: 0 0;
+    }
+  }
+  
+  /* =========================================================
+     SEÇÃO BOXALIGN (MISSÃO, VISÃO, VALORES)
+  ========================================================= */
+  .boxalign {
+    background: #f0f2f7;
+    padding: 40px 0;
+  }
+  
+  .boxalign .container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* wrapper padrão das caixas */
+  .box-1,
+  .box-2,
+  .box-3 {
+    flex: 1 1 220px;
+    max-width: 260px;
+    display: flex;
+    justify-content: center;
+  }
+  
+  /* =========================================================
+     HERO SLIDER
+  ========================================================= */
+  .hero-slider {
+    position: relative;
+    height: clamp(360px, 65vh, 680px);
+    overflow: hidden;
+    background: #050711;
+    color: #fff;
+  }
+  
+  .hero-slider .slides {
+    height: 100%;
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 100%;
+    transition: transform 0.6s cubic-bezier(0.22, 0.61, 0.36, 1);
+  }
+  
+  .hero-slider .slide {
+    position: relative;
+    height: 100%;
+    background-image: var(--bg);
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .hero-slider .slide .overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        90deg,
+        rgba(5, 10, 25, 0.9) 0%,
+        rgba(5, 10, 25, 0.65) 40%,
+        rgba(5, 10, 25, 0.1) 80%
+      ),
+      radial-gradient(900px 500px at 10% 20%, rgba(255, 255, 255, 0.18), transparent);
+  }
+  
+  .hero-slider .content {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: min(6vw, 80px);
+    max-width: 720px;
+  }
+  
+  .hero-slider h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    text-transform: lowercase;
+    margin-bottom: 8px;
+  }
+  
+  .hero-slider p {
+    font-size: clamp(0.98rem, 2vw, 1.1rem);
+    margin-bottom: 22px;
+  }
+  
+  /* botão do hero */
+  .btn.btn-hero {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--azul);
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 999px;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 20px rgba(0, 74, 173, 0.35);
+    transition: background var(--transition), transform var(--transition);
+  }
+  
+  .btn.btn-hero:hover {
+    background: var(--azul-esc);
+    transform: translateY(-1px);
+  }
+  
+  .btn.btn-hero::after {
+    content: "›";
+    font-weight: 900;
+  }
+  
+  /* setas */
+  .hero-slider .nav {
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    width: 40px;
+    height: 40px;
+    border: none;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.22);
+    color: #fff;
+    font-size: 20px;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition);
+    z-index: 2;
+  }
+  
+  .hero-slider .nav:hover {
+    background: rgba(255, 255, 255, 0.36);
+    transform: translateY(-50%) scale(1.05);
+  }
+  
+  .hero-slider .prev {
+    left: 18px;
+  }
+  
+  .hero-slider .next {
+    right: 18px;
+  }
+  
+  /* dots */
+  .hero-slider .dots {
+    position: absolute;
+    left: 50%;
+    bottom: 16px;
+    translate: -50% 0;
+    display: flex;
+    gap: 8px;
+    z-index: 2;
+  }
+  
+  .hero-slider .dots button {
+    width: 10px;
+    height: 10px;
+    border-radius: 999px;
+    border: 0;
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.45);
+    transition: transform var(--transition), background var(--transition);
+  }
+  
+  .hero-slider .dots button[aria-selected="true"] {
+    background: #fff;
+    transform: scale(1.2);
+  }
+  
+  /* WhatsApp flutuante */
+  .hero-slider .whats-cta {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+    background: #25d366;
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 14px;
+    border-radius: 999px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 8px 18px rgba(37, 211, 102, 0.35);
+    z-index: 2;
+  }
+  
+  /* =========================================================
+     SERVIÇOS
+  ========================================================= */
+  .servicos {
+    background: #f5f7fb;
+    padding: 60px 0;
+    text-align: center;
+  }
+  
+  .servicos h2 {
+    font-size: 1.8rem;
+    color: var(--azul);
+    margin-bottom: 26px;
+  }
+  
+  .cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 22px;
+    justify-content: center;
+  }
+  
+  .card {
+    background: #fff;
+    width: 100%;
+    max-width: 320px;
+    padding: 24px 20px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    transition: transform var(--transition), box-shadow var(--transition);
+    text-align: left;
+  }
+  
+  .card i {
+    font-size: 2.2rem;
+    color: var(--azul);
+    margin-bottom: 10px;
+  }
+  
+  .card h3 {
+    margin-bottom: 8px;
+    color: var(--azul-esc);
+  }
+  
+  .card p {
+    font-size: 0.95rem;
+    color: #555;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 26px rgba(0, 0, 0, 0.12);
+  }
+  
+  /* =========================================================
+     CONTATO CTA
+  ========================================================= */
+  .contat {
+    background: var(--azul);
+    color: #fff;
+    text-align: center;
+    padding: 60px 0;
+  }
+  
+  .contat h2 {
+    font-size: 1.9rem;
+    margin-bottom: 8px;
+  }
+  
+  .contat p {
+    margin-bottom: 18px;
+  }
+  
+  .contat .btn {
+    background: var(--amarelo);
+    color: var(--azul-esc);
+    padding: 10px 20px;
+    border-radius: 999px;
+    text-decoration: none;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: transform var(--transition), background var(--transition);
+  }
+  
+  .contat .btn:hover {
+    background: var(--amarelo-esc);
+    transform: translateY(-2px);
+  }
+  
+  /* =========================================================
+     FORMULÁRIO DE CONTATO COMPLETO
+  ========================================================= */
+  .contatos {
+    background-image: url("images.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 60px 0;
+    position: relative;
+    color: #000;
+  }
+  
+  .contatos::before {
+    /* overlay para melhorar contraste */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.55),
+      rgba(0, 0, 0, 0.2)
+    );
+  }
+  
+  .container02 {
+    position: relative;
+    background: rgba(240, 240, 6, 0.2);
+    padding: 28px 22px;
+    border-radius: 22px;
+    box-shadow: 0 14px 34px rgba(0, 0, 0, 0.35);
+    max-width: 720px;
+    text-align: left;
+    
+      /* Suavização da animação */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  /* Movimento ao passar mouse */
+.container02:hover {
+  transform: translateY(8px); /* Sobe um pouco */
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.95); /* Sombra mais forte */
+}
+  .container02 h1 {
+    color: var(--azul-esc);
+    margin-bottom: 14px;
+  }
+  
+  .input-group {
+    margin-bottom: 14px;
+  }
+  
+  label {
+    font-weight: 500;
+    display: block;
+    margin-bottom: 4px;
+    color: #333;
+  }
+  
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 10px;
+    border: 2px solid #d2d6e1;
+    outline: none;
+    font-family: inherit;
+    font-size: 0.98rem;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    resize: vertical;
+  }
+  
+  input:focus,
+  textarea:focus {
+    border-color: var(--azul);
+    box-shadow: 0 0 0 3px rgba(0, 74, 173, 0.18);
+  }
+  
+  .buttonB {
+    width: 100%;
+    background: var(--azul);
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background var(--transition), transform var(--transition),
+      box-shadow var(--transition);
+  }
+  
+  .buttonB:hover {
+    background: var(--azul-esc);
+    transform: translateY(-1px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+  }
+  
+  .success-message {
+    color: var(--verde);
+    font-weight: 600;
+    margin-top: 14px;
+    opacity: 0;
+    transition: opacity 0.5s;
+  }
+  
+  /* =========================================================
+     MODAIS (Missão / Visão / Valores)
+  ========================================================= */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, 0.45);
+    justify-content: center;
+    align-items: center;
+    padding: 16px;
+  }
+  
+  .modal-content {
+    background: linear-gradient(145deg, #eef1f4, #ffffff);
+    padding: 28px 22px;
+    border-radius: 18px;
+    max-width: 460px;
+    width: 100%;
+    text-align: left;
+    color: #2c2c2c;
+    position: relative;
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+  }
+  
+  .modal-content p {
+    font-size: 1rem;
+  }
+  
+  .modal-content strong {
+    color: var(--azul-esc);
+  }
+  
+  .close {
+    position: absolute;
+    top: 10px;
+    right: 16px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+    transition: color var(--transition), transform var(--transition);
+  }
+  
+  .close:hover {
+    color: #000;
+    transform: scale(1.1);
+  }
+  
+  /* =========================================================
+     RODAPÉ
+  ========================================================= */
+  footer {
+    background: #020715;
+    color: #fff;
+    text-align: center;
+    padding: 40px 0 26px;
+    font-size: 0.9rem;
+    position: relative;
+    top:-5px;
+  }
+  
+  footer small {
+    display: block;
+    margin-top: 4px;
+    opacity: 0.8;
+  }
+  
+  /* =========================================================
+     RESPONSIVIDADE
+  ========================================================= */
+  
+  @media (max-width: 960px) {
+    .Mtop {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .Menu {
+      width: 100%;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+      row-gap: 10px;
+    }
+  
+    .intro {
+      margin-top: 20px;
+    }
+  
+    .f-itop {
+      position: static;
+      margin-top: 8px;
+    }
+  
+    .hero-slider .content {
+      padding-inline: 20px;
+    }
+  }
+  
+  @media (max-width: 720px) {
+    .hero-slider {
+      height: 420px;
+    }
+  
+    .hero-slider .nav {
+      width: 36px;
+      height: 36px;
+      font-size: 18px;
+    }
+  
+    .hero-slider .prev {
+      left: 10px;
+    }
+  
+    .hero-slider .next {
+      right: 10px;
+    }
+  
+    .hero-slider .whats-cta {
+      font-size: 0.8rem;
+      padding: 8px 12px;
+      right: 10px;
+      bottom: 10px;
+    }
+  
+    .container02 {
+      padding: 20px 16px;
+    }
+  }
+  
+  @media (max-width: 520px) {
+    .Menu {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .logo img {
+      max-width: 190px;
+    }
+  
+    .boxalign .container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .box-1,
+    .box-2,
+    .box-3 {
+      max-width: 100%;
+    }
+  
+    .glow-on-hover {
+      width: 100%;
+      justify-content: center;
+      font-size: 0.95rem;
+    }
+  }
+  /* =========================================================
+     MOVIMENTA .Mtop.fixo
+  ========================================================= */
+  /* NAV normal */
+.Mtop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+  transition: all 0.4s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* NAV quando ficar fixo no topo */
+.Mtop.fixo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  opacity: 1;
+  transform: translateY(0);
+  animation: aparecerMenu 0.6s ease forwards;
+  animation-delay: 0.2s; /* DELAY DE 200MS PARA APARECER */
+
+  background: rgba(0, 0, 0, 0.562); /* pode trocar pela sua cor/gradiente */
+  backdrop-filter: blur(8px);
+  padding: 10px 5%;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+
+  /* mantém layout interno */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+@keyframes aparecerMenu {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/*Catalogo do dinamico*/
+#slideCatalogo {
+  cursor: pointer;
+}
+
+/* Estado inicial invisível */
+/*===============================================
+                MODAL IMAGEM
+===============================================*/
+.modal-img {
+  width: 200%;
+  height: auto;
+  margin: 10px 0 20px 0;
+  border-radius: 10px;
+}
+/*=========================================================
+          BOTAO WHATS NO CANTO DIREITO
+===========================================================*/
+.whts {
+  position: fixed;
+  bottom: 20px;   /* distancia do rodapé */
+  right: 30px;    /* distancia da borda direita */
+  background-color: #25d366;
+  color: white;
+  padding: 10px;
+  border-radius: 50%;
+  font-size: 22px;
+  z-index: 9999; /* garante que fica por cima */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+  transition: transform .2s;
+  height:40px;
+   /* animação de flutuação */
+  animation: flutuar 2.5s infinite ease-in-out;
+}
+@keyframes flutuar {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
+
+.whts a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px;
+}
+
+.whts:hover {
+  transform: scale(1.1);
+}
+.whts a {
+  color: white;
+  text-decoration: none;
+  position: relative;
+  top: -5px;
+}
