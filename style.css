@@ -713,7 +713,7 @@
     display: none;
     position: fixed;
     inset: 0;
-    z-index: 100;
+    z-index: 9000;
     background: rgba(0, 0, 0, 0.45);
     justify-content: center;
     align-items: center;
@@ -722,14 +722,13 @@
   
   .modal-content {
     background: linear-gradient(145deg, #eef1f4, #ffffff);
-    padding: 28px 22px;
-    border-radius: 18px;
-    max-width: 460px;
-    width: 100%;
-    text-align: left;
-    color: #2c2c2c;
-    position: relative;
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.35);
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 80vw;
+    max-height: 80vh;
+    overflow: auto;
+    z-index: 9000;
   }
   
   .modal-content p {
@@ -966,3 +965,4 @@
   position: relative;
   top: -5px;
 }
+
