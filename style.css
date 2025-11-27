@@ -83,12 +83,44 @@
     justify-content: space-between;
     gap: 18px;
   }
-  
+
   /* logo */
   .logo img {
     max-width: 150px;
   }
-  
+
+  /* menu toggle (mobile) */
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+  }
+
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 3px;
+    background: #fff;
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
   /* menu */
   .Menu {
     list-style: none;
@@ -160,16 +192,16 @@
   .img-2{
     position: absolute;
     left: 55rem;
-    top: 13rem;
+    top: 8rem;
     right: 0px;
-    width: 480px; /* ajuste como quiser */
-    animation: pulse 20s ease-in-out infinite;
+    width: 420px; /* ajuste como quiser */
+    animation: pulse 5s ease-in-out infinite;
   }
   
   @keyframes pulse {
-    0% { transform: scale(0.5); }
-    50% { transform: scale(1.5); }
-    100% { transform: scale(0.5); }
+    0% { transform: scale(0.92); }
+    50% { transform: scale(1); }
+    100% { transform: scale(0.92); }
   }
   
   .intro h1 {
@@ -189,10 +221,6 @@
     margin-top: 20px;
   }
   @media (max-width: 768px) {
-    nav {
-      display: none; /* esconde o menu grande */
-    }
-  
     .intro {
       padding: 20px;
       margin: 0;
@@ -240,23 +268,6 @@
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
   }
   
-  .sobre .paragrafo {
-    max-width: 700px;
-    margin: auto;
-    line-height: 1.6;
-    background-color: #c4f3d5;
-    border-radius: 1px 15px 1px 15px;
-    padding: 5rem;
-    font-size: 25px;
-    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset,
-      rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset,
-      rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset,
-      rgba(0, 0, 0, 0.06) 0px 2px 1px,
-      rgba(0, 0, 0, 0.09) 0px 4px 2px,
-      rgba(0, 0, 0, 0.09) 0px 8px 4px,
-      rgba(0, 0, 0, 0.09) 0px 16px 8px,
-      rgba(0, 0, 0, 0.09) 0px 32px 16px;
-  }
   
   /* Parágrafo mais leve no mobile */
   @media (max-width: 768px) {
@@ -264,6 +275,41 @@
       padding: 2rem;
       font-size: 18px;
     }
+  }
+
+  /* SOBRE N�S */
+  .sobre {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(270deg, #83762c, #1a1a1a, #650e70);
+    background-size: 400% 400%;
+    animation: animarFundo 10s ease infinite;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Arial;
+    z-index: 6;
+  }
+  @keyframes animarFundo {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  .sobre .container {
+    display: flex;
+    justify-content: center;
+  }
+
+  .sobre .paragrafo {
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
   }
   
   /* borda neon */
@@ -783,13 +829,6 @@
       align-items: flex-start;
     }
   
-    .Menu {
-      width: 100%;
-      justify-content: flex-start;
-      flex-wrap: wrap;
-      row-gap: 10px;
-    }
-  
     .intro {
       margin-top: 20px;
     }
@@ -807,6 +846,13 @@
   @media (max-width: 720px) {
     .hero-slider {
       height: 420px;
+    }
+
+    .img-2 {
+      position: static;
+      width: 75%;
+      margin: 20px auto 0;
+      display: none;
     }
   
     .hero-slider .nav {
@@ -966,3 +1012,31 @@
   top: -5px;
 }
 
+/* Mobile menu behavior */
+@media (max-width: 960px) {
+  .menu-toggle {
+    display: flex;
+  }
+
+  .Menu {
+    display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .Menu.open {
+    display: flex;
+  }
+
+  .Menu li a {
+    width: 100%;
+  }
+
+  .Mtop {
+    align-items: flex-start;
+  }
+}
